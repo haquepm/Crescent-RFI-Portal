@@ -121,3 +121,9 @@ td{color:#e6fff5!important;border-color:var(--line)!important}tr:hover td{backgr
 a{color:#71e7cd}hr{border-color:var(--line)!important}
 @media(min-width:901px){.main{padding:34px 42px!important}.section{margin-top:24px}.gridstats .card{min-height:142px}}
 @media(max-width:900px){body{background:radial-gradient(ellipse at 50% 0%,rgba(8,105,78,.25),transparent 42%),linear-gradient(180deg,#031713,#041e18 58%,#02140f)!important}.main{padding:18px 14px 32px!important}.card{border-radius:17px!important}.mobile-nav{padding-top:9px!important}}
+
+
+/* Compact, consistent dashboard header action */
+.main header .primary{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;height:48px;padding:0 22px!important;font-size:16px;line-height:1.2;white-space:nowrap;flex:0 0 auto}
+.main header .primary svg{flex:0 0 auto;margin:0!important}
+@media(max-width:600px){.main header .primary{min-height:44px;height:44px;padding:0 14px!important;font-size:13px}}
