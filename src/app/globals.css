@@ -142,3 +142,12 @@ form section>div>label,[class*="checklist"] label{background:rgba(13,57,46,.55)!
 [style*="background: rgb(255, 255, 255)"],[style*="background:#fff"],[style*="background: #fff"],[style*="background:white"],[style*="background: white"]{background:linear-gradient(145deg,rgba(9,48,39,.97),rgba(4,30,24,.98))!important;color:#effff9!important;border-color:rgba(106,192,161,.22)!important}
 [style*="color: rgb(30, 77, 114)"],[style*="color: #1e4d72"],[style*="color: rgb(117, 131, 152)"],[style*="color: #758398"]{color:#91aaa2!important}
 @media(max-width:900px){form.mobile-form{margin:12px!important;padding:16px!important}}
+
+
+/* Mobile bottom navigation: always one horizontal row; Admin is role-gated in component */
+@media(max-width:900px){
+ .mobile-nav{display:grid!important;grid-template-columns:repeat(7,minmax(0,1fr))!important;align-items:stretch;gap:0!important;overflow:hidden}
+ .mobile-nav button{min-width:0!important;width:100%;padding:5px 0!important;gap:3px!important;white-space:nowrap}
+ .mobile-nav button svg{width:19px;height:19px;flex:0 0 auto}
+ .mobile-nav button span{font-size:clamp(7px,2.2vw,9px)!important;line-height:1.1;letter-spacing:-.02em}
+}
