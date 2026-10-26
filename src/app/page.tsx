@@ -6,7 +6,8 @@ import { useRouter } from "next/navigation";
 import { Activity, AlertCircle, Bell, CheckCircle2, Clock3, ClipboardCheck, ClipboardList, FilePlus2, HardHat, LayoutDashboard, ListChecks, Search, Settings2, ShieldCheck } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
 
-type Rfi = { id:string; rfi_number:string; project_id:string; location?:string|null; activity_name?:string|null; status:string; created_at:string; inspection_date?:string|null; scheduled_at?:string|null };\ntype Baseline = {location:string;rfi_raised:number;rfi_closed:number;pending:number};
+type Rfi = { id:string; rfi_number:string; project_id:string; location?:string|null; activity_name?:string|null; status:string; created_at:string; inspection_date?:string|null; scheduled_at?:string|null };
+type Baseline = {location:string;rfi_raised:number;rfi_closed:number;pending:number};
 const statusStyle:Record<string,string>={draft:"pill-blue",checklist_in_progress:"pill-blue",submitted:"pill-amber",scheduled:"pill-blue",approved:"pill-green",rejected:"pill-red",rectification_required:"pill-amber",closed:"pill-green"};
 const statusLabel:Record<string,string>={draft:"Draft",checklist_in_progress:"Checklist in progress",submitted:"Submitted",scheduled:"Scheduled",approved:"Approved",rejected:"Rejected",rectification_required:"Rectification required",closed:"Closed"};
 const nav=[{label:"Overview",icon:LayoutDashboard},{label:"RFI Register",icon:ClipboardList},{label:"Create RFI",icon:FilePlus2},{label:"Checklists",icon:ListChecks},{label:"Inspections",icon:ClipboardCheck},{label:"Reports",icon:Activity}];
