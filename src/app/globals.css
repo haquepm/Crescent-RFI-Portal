@@ -80,3 +80,43 @@ td{border-color:#eef0eb}
   .site-table th:not(:first-child),.site-table td:not(:first-child){width:19%}
   .site-table .pill{padding:4px 6px;font-size:10px}
 }
+
+
+/* Crescent RFI Portal — emerald glass theme */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+:root{color-scheme:dark;--app-bg:#031713;--panel:#06241e;--mint:#14e2bd;--lime:#c9ed38;--ink:#effff9;--muted:#8ba9a0;--line:rgba(142,198,178,.15)}
+html,body{background:#031713!important;color:#effff9!important}
+body{font-family:'Inter',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif!important;background:radial-gradient(ellipse at 12% 0%,rgba(10,104,78,.28),transparent 38%),radial-gradient(ellipse at 90% 24%,rgba(8,75,61,.20),transparent 34%),linear-gradient(145deg,#031713 0%,#041e18 48%,#02130f 100%)!important;color:#effff9!important;-webkit-font-smoothing:antialiased}
+.shell{background:transparent!important}
+.sidebar{background:linear-gradient(180deg,rgba(4,34,27,.97),rgba(2,20,16,.99))!important;color:#eafff7!important;border-right:1px solid rgba(86,178,146,.18);box-shadow:12px 0 40px rgba(0,0,0,.18)}
+.brandmark{background:linear-gradient(145deg,#15e1b7,#a9ed52)!important;color:#03251d!important;box-shadow:0 0 24px rgba(20,226,189,.22)}
+.navitem{color:#91b2a7!important;border:1px solid transparent}
+.navitem.active,.navitem:hover{background:linear-gradient(100deg,rgba(20,226,189,.16),rgba(20,226,189,.04))!important;color:#dffff6!important;border-color:rgba(20,226,189,.17)!important}
+.main{color:#effff9!important}
+.eyebrow{color:#7da99a!important;letter-spacing:.16em}
+.muted{color:#91aaa2!important}
+.card{background:linear-gradient(145deg,rgba(9,48,39,.94),rgba(4,30,24,.96))!important;border:1px solid rgba(106,192,161,.19)!important;border-radius:18px!important;box-shadow:0 16px 44px rgba(0,0,0,.24),inset 0 1px 0 rgba(210,255,235,.045)!important;color:#edfff8!important;backdrop-filter:blur(18px)}
+.stat{background:linear-gradient(145deg,rgba(12,57,45,.96),rgba(4,30,24,.96))!important}
+.statnum{color:#f1fff9!important}
+.primary{background:linear-gradient(105deg,#0ed9b5,#24efc3)!important;color:#03241c!important;border:0!important;border-radius:11px!important;box-shadow:0 8px 22px rgba(11,219,180,.16);font-weight:700!important}
+.primary:hover{filter:brightness(1.08)}
+.secondary{background:rgba(20,65,53,.56)!important;color:#dffff6!important;border:1px solid rgba(112,195,166,.25)!important;border-radius:11px!important}
+.field,input,select,textarea{background:rgba(2,24,19,.76)!important;color:#effff9!important;border:1px solid rgba(118,190,162,.24)!important;border-radius:11px!important}
+.field::placeholder,input::placeholder,textarea::placeholder{color:#78968b!important}
+.field:focus,input:focus,select:focus,textarea:focus{outline:2px solid rgba(20,226,189,.6)!important;outline-offset:1px}
+select option{background:#08271f;color:#effff9}
+.pill{border:1px solid rgba(140,205,175,.12)}
+.pill-green{background:rgba(20,226,126,.13)!important;color:#8af0b8!important}
+.pill-blue{background:rgba(20,226,189,.12)!important;color:#7cebd4!important}
+.pill-amber{background:rgba(201,237,56,.13)!important;color:#d8ef76!important}
+.pill-red{background:rgba(255,104,104,.13)!important;color:#ffaaaa!important}
+table{color:#eafff6!important}th{background:rgba(20,72,57,.52)!important;color:#8fb5a7!important;border-bottom:1px solid var(--line)}
+td{color:#e6fff5!important;border-color:var(--line)!important}tr:hover td{background:rgba(20,226,189,.045)!important}
+.section{color:#effff9}
+.mobile-nav{background:rgba(2,25,20,.94)!important;border-top:1px solid rgba(109,191,159,.2)!important;box-shadow:0 -12px 34px rgba(0,0,0,.34)!important;backdrop-filter:blur(22px)!important}
+.mobile-nav button{color:#78988d!important}.mobile-nav button.selected{color:#c9fff0!important}.mobile-nav button.selected svg{color:#18e0b9!important;filter:drop-shadow(0 0 7px rgba(20,226,189,.35))}
+.mobilebar{color:#effff9!important}footer{border-color:var(--line)!important}
+.site-table th{background:rgba(18,70,56,.65)!important}.site-table td:first-child{color:#8beed4!important}
+a{color:#71e7cd}hr{border-color:var(--line)!important}
+@media(min-width:901px){.main{padding:34px 42px!important}.section{margin-top:24px}.gridstats .card{min-height:142px}}
+@media(max-width:900px){body{background:radial-gradient(ellipse at 50% 0%,rgba(8,105,78,.25),transparent 42%),linear-gradient(180deg,#031713,#041e18 58%,#02140f)!important}.main{padding:18px 14px 32px!important}.card{border-radius:17px!important}.mobile-nav{padding-top:9px!important}}
