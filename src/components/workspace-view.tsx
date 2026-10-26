@@ -5,7 +5,8 @@ import {useRouter} from "next/navigation";
 import {createClient} from "@/lib/supabase/client";
 type Rfi={id:string;rfi_number:string;location:string|null;structure:string|null;activity_name:string;status:string;created_at:string;scheduled_at:string|null;requested_inspection_at:string|null};
 type Template={id:string;activity_name:string;item_text:string;item_order:number;is_required:boolean;is_active:boolean};
-type Baseline={location:string;rfi_raised:number;rfi_closed:number;pending:number};\ntype Inspection={id:string;rfi_id:string;inspection_number:number;scheduled_at:string|null;inspector_name:string|null;outcome:string|null;remarks:string|null;rfis?:{rfi_number:string;location:string|null;activity_name:string;status:string}|null};
+type Baseline={location:string;rfi_raised:number;rfi_closed:number;pending:number};
+type Inspection={id:string;rfi_id:string;inspection_number:number;scheduled_at:string|null;inspector_name:string|null;outcome:string|null;remarks:string|null;rfis?:{rfi_number:string;location:string|null;activity_name:string;status:string}|null};
 const label=(s:string)=>s.replaceAll("_"," ").replace(/\b\w/g,x=>x.toUpperCase());
 export default function WorkspaceView({view}:{view:"register"|"checklists"|"inspections"|"reports"}){
  const router=useRouter();const [rfis,setRfis]=useState<Rfi[]>([]);const [baselines,setBaselines]=useState<Baseline[]>([]);const [templates,setTemplates]=useState<Template[]>([]);const [inspections,setInspections]=useState<Inspection[]>([]);const [loading,setLoading]=useState(true);const [error,setError]=useState("");const [search,setSearch]=useState("");const [status,setStatus]=useState("all");const [category,setCategory]=useState("all");
