@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -83,7 +84,7 @@ td{border-color:#eef0eb}
 
 
 /* Crescent RFI Portal — emerald glass theme */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
 :root{color-scheme:dark;--app-bg:#031713;--panel:#06241e;--mint:#14e2bd;--lime:#c9ed38;--ink:#effff9;--muted:#8ba9a0;--line:rgba(142,198,178,.15)}
 html,body{background:#031713!important;color:#effff9!important}
 body{font-family:'Inter',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif!important;background:radial-gradient(ellipse at 12% 0%,rgba(10,104,78,.28),transparent 38%),radial-gradient(ellipse at 90% 24%,rgba(8,75,61,.20),transparent 34%),linear-gradient(145deg,#031713 0%,#041e18 48%,#02130f 100%)!important;color:#effff9!important;-webkit-font-smoothing:antialiased}
