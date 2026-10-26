@@ -1,5 +1,5 @@
-import MobileNav from "@/components/mobile-nav";
 "use client";
+import MobileNav from "@/components/mobile-nav";
 
 import { useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
