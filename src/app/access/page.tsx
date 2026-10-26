@@ -2,7 +2,8 @@
 import {useEffect,useState} from "react";
 import {createClient} from "@/lib/supabase/client";
 type Profile={user_id:string;full_name:string;role:string;is_active:boolean};
-const roles=["site_engineer","inspection_team","project_manager","management","admin"];\nconst roleNames:Record<string,string>={site_engineer:"Site Engineer",inspection_team:"Inspection Team",project_manager:"Project Manager",management:"Management",admin:"RFI Administrator"};
+const roles=["site_engineer","inspection_team","project_manager","management","admin"];
+const roleNames:Record<string,string>={site_engineer:"Site Engineer",inspection_team:"Inspection Team",project_manager:"Project Manager",management:"Management",admin:"RFI Administrator"};
 export default function AccessPage(){
  const [rows,setRows]=useState<Profile[]>([]);const [loading,setLoading]=useState(true);const [error,setError]=useState("");const [message,setMessage]=useState("");
  async function load(){const sb=createClient();const {data:userData}=await sb.auth.getUser();if(!userData.user){location.href="/login";return}const {data:me}=await sb.from("rfi_user_profiles").select("role,is_active").eq("user_id",userData.user.id).maybeSingle();if(me?.role!=="admin"||!me.is_active){setError("Administrator access is required.");setLoading(false);return}const {data,error}=await sb.from("rfi_user_profiles").select("user_id,full_name,role,is_active").order("full_name");if(error)setError(error.message);else setRows((data||[]) as Profile[]);setLoading(false)}
