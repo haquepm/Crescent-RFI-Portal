@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,7 +6,7 @@
 
 /* Refined dashboard visual language inspired by the supplied reference */
 :root{--ink:#17212b;--muted:#75808a;--line:#e7e9e5;--canvas:#f2f4f1;--lime:#b8f36a;--lime-soft:#eaf8d9;--navy:#101820}
-body{font-family:Inter,"Segoe UI",Arial,sans-serif;background:var(--canvas);color:var(--ink);-webkit-font-smoothing:antialiased}
+body{font-family:"DM Sans",Inter,"Segoe UI",Arial,sans-serif;background:var(--canvas);color:var(--ink);-webkit-font-smoothing:antialiased}
 .sidebar{background:#111a20}
 .brandmark{background:#b8f36a;border-radius:10px}
 .navitem{border-radius:8px}
