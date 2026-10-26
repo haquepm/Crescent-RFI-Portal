@@ -1,5 +1,5 @@
-import MobileNav from "@/components/mobile-nav";
 "use client";
+import MobileNav from "@/components/mobile-nav";
 import {useEffect,useState} from "react";
 import {useParams,useRouter} from "next/navigation";
 import {createClient} from "@/lib/supabase/client";
