@@ -127,3 +127,18 @@ a{color:#71e7cd}hr{border-color:var(--line)!important}
 .main header .primary{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;height:48px;padding:0 22px!important;font-size:16px;line-height:1.2;white-space:nowrap;flex:0 0 auto}
 .main header .primary svg{flex:0 0 auto;margin:0!important}
 @media(max-width:600px){.main header .primary{min-height:44px;height:44px;padding:0 14px!important;font-size:13px}}
+
+
+/* Global dark-emerald form and surface consistency — remove legacy white panels */
+:root{--app-bg:#031713;--panel:#06241e;--panel-raised:#0a3027;--field-bg:#123b32;--mint:#14e2bd;--lime:#c9ed38;--ink:#effff9;--muted:#91aaa2;--line:rgba(142,198,178,.18)}
+form,.form-panel,.form-card,.mobile-form{background:linear-gradient(145deg,rgba(9,48,39,.97),rgba(4,30,24,.98))!important;color:#effff9!important;border:1px solid rgba(106,192,161,.22)!important;box-shadow:0 16px 44px rgba(0,0,0,.24),inset 0 1px 0 rgba(210,255,235,.045)!important}
+label,legend{color:#c8f5e8!important}
+input:not([type="checkbox"]):not([type="radio"]),select,textarea,.field{background:#123b32!important;color:#effff9!important;border:1px solid rgba(118,190,162,.32)!important}
+input::placeholder,textarea::placeholder{color:#8ba99e!important;opacity:1}
+input[type="checkbox"],input[type="radio"]{accent-color:#14e2bd}
+input[type="datetime-local"]{color-scheme:dark}
+button:disabled{opacity:.55;cursor:not-allowed}
+form section>div>label,[class*="checklist"] label{background:rgba(13,57,46,.55)!important;border-color:rgba(118,190,162,.22)!important;color:#eafff6!important}
+[style*="background: rgb(255, 255, 255)"],[style*="background:#fff"],[style*="background: #fff"],[style*="background:white"],[style*="background: white"]{background:linear-gradient(145deg,rgba(9,48,39,.97),rgba(4,30,24,.98))!important;color:#effff9!important;border-color:rgba(106,192,161,.22)!important}
+[style*="color: rgb(30, 77, 114)"],[style*="color: #1e4d72"],[style*="color: rgb(117, 131, 152)"],[style*="color: #758398"]{color:#91aaa2!important}
+@media(max-width:900px){form.mobile-form{margin:12px!important;padding:16px!important}}
