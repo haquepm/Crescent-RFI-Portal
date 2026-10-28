@@ -16,7 +16,8 @@ export default function manifest(): MetadataRoute.Manifest {
     categories: ["business", "productivity"],
     icons: [
       { src: "/192x192%20new.png", sizes: "192x192", type: "image/png", purpose: "any" },
-      { src: "/512x512%20new.png", sizes: "512x512", type: "image/png", purpose: "any maskable" }
+      { src: "/512x512%20new.png", sizes: "512x512", type: "image/png", purpose: "any" },
+      { src: "/512x512%20new.png", sizes: "512x512", type: "image/png", purpose: "maskable" }
     ]
   };
 }
