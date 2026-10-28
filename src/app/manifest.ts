@@ -11,13 +11,13 @@ export default function manifest(): MetadataRoute.Manifest {
     display: "standalone",
     display_override: ["standalone", "minimal-ui"],
     orientation: "any",
-    background_color: "#031f19",
-    theme_color: "#06352b",
+    background_color: "#091426",
+    theme_color: "#101d35",
     categories: ["business", "productivity"],
     icons: [
-      { src: "/192x192%20new.png", sizes: "192x192", type: "image/png", purpose: "any" },
-      { src: "/512x512%20new.png", sizes: "512x512", type: "image/png", purpose: "any" },
-      { src: "/512x512%20new.png", sizes: "512x512", type: "image/png", purpose: "maskable" }
+      { src: "/crescent-rfi-192.png", sizes: "192x192", type: "image/png", purpose: "any" },
+      { src: "/crescent-rfi-512.png", sizes: "512x512", type: "image/png", purpose: "any" },
+      { src: "/crescent-rfi-512.png", sizes: "512x512", type: "image/png", purpose: "maskable" }
     ]
   };
 }
