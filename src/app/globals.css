@@ -218,3 +218,36 @@ label,legend{color:#c8d9ee!important}input[type=checkbox],input[type=radio]{acce
 .login-glow-one,.login-glow-two{border-color:#62b8ed29!important;box-shadow:0 0 0 55px #62b8ed08,0 0 0 110px #f28a3205!important}
 @media(max-width:900px){body{background:linear-gradient(180deg,#091426,#101d35 60%,#0b172a)!important}.mobile-nav{box-shadow:0 -10px 30px #0005!important}}
 @media(max-width:800px){.login-form-side{background:linear-gradient(145deg,#14243d,#101d35)!important}.login-mobile-brand{color:#f2f7ff!important}}
+
+
+/* FINAL BRAND OVERRIDES — enforce Crescent navy / orange / sky-blue palette */
+html:root{color-scheme:dark!important;--mint:#62b8ed!important;--lime:#f28a32!important;--app-bg:#091426!important;--panel:#14243d!important}
+html,body{background-color:#091426!important;color:#f2f7ff!important}
+body{background-image:radial-gradient(ellipse at 12% 0%,rgba(98,184,237,.13),transparent 36%),radial-gradient(ellipse at 90% 20%,rgba(242,138,50,.09),transparent 30%),linear-gradient(145deg,#091426,#101d35 58%,#0b172a)!important}
+.sidebar,.login-brand-panel{background:#101d35!important}
+.brandmark{background:#f28a32!important;color:#101d35!important}
+.navitem.active,.navitem:hover{background:rgba(98,184,237,.13)!important;color:#fff!important;border-color:rgba(98,184,237,.3)!important}
+.card,.stat,form,.form-panel,.form-card,.mobile-form{background:linear-gradient(145deg,#192b47,#12213a)!important;border-color:rgba(151,184,220,.19)!important;color:#f2f7ff!important}
+.primary,.login-submit{background:#f28a32!important;color:#172238!important;border-color:#ffad5c!important;box-shadow:0 7px 18px rgba(242,138,50,.16)!important}
+.primary:hover,.login-submit:hover{background:#ffad5c!important}
+.secondary{background:#1b2d49!important;color:#dcecff!important;border-color:rgba(98,184,237,.35)!important}
+input:not([type=checkbox]):not([type=radio]),select,textarea,.field{background:#0d1a2e!important;color:#f2f7ff!important;border-color:rgba(151,184,220,.35)!important}
+input:focus,select:focus,textarea:focus,.field:focus{outline:2px solid rgba(98,184,237,.65)!important}
+input[type=checkbox],input[type=radio]{accent-color:#f28a32!important}
+.login-screen{background:radial-gradient(ellipse at 15% 15%,rgba(98,184,237,.18),transparent 36%),radial-gradient(ellipse at 90% 82%,rgba(242,138,50,.12),transparent 32%),linear-gradient(135deg,#091426,#101d35 55%,#0b172a)!important;color:#f2f7ff!important}
+.login-layout{background:#14243d!important;border-color:rgba(151,184,220,.2)!important}
+.login-brand-panel{background:linear-gradient(155deg,#1b3151,#101d35)!important}
+.login-eyebrow,.login-show-password{color:#62b8ed!important}
+.login-eyebrow span{background:#f28a32!important;box-shadow:0 0 12px rgba(242,138,50,.6)!important}
+.login-brand-copy h1 em,.login-card-kicker{color:#f28a32!important}
+.login-feature-icon{background:rgba(98,184,237,.1)!important;border-color:rgba(98,184,237,.3)!important;color:#a2d9ff!important}
+.login-form-side{background:linear-gradient(145deg,#101d35,#0d192d)!important}
+.login-input-wrap{background:transparent!important;border:0!important;border-bottom:1px solid rgba(151,184,220,.55)!important;border-radius:0!important;box-shadow:none!important}
+.login-input-wrap:focus-within{border-bottom:2px solid #62b8ed!important;box-shadow:none!important}
+.login-input-wrap input,.login-input-wrap input:focus{background:transparent!important;border:0!important;border-radius:0!important;color:#f4f8ff!important;outline:0!important;box-shadow:none!important}
+.login-input-wrap input::placeholder{color:#8498b2!important}
+.login-label{color:#c8d9ee!important}
+.login-security span{color:#62b8ed!important}
+.mobile-nav{background:rgba(9,20,38,.97)!important;border-color:rgba(151,184,220,.19)!important}
+.mobile-nav button.selected svg{color:#f28a32!important}
+a{color:#62b8ed!important}
