@@ -1,13 +1,26 @@
 "use client";
-import {useEffect,useState} from "react";
 import {usePathname,useRouter} from "next/navigation";
-import {LayoutDashboard,ClipboardList,FilePlus2,CalendarCheck,ChartNoAxesCombined,ShieldCheck,LogOut} from "lucide-react";
+import {useEffect,useState} from "react";
+import {Home,ClipboardList,ListChecks,LogOut} from "lucide-react";
 import {createClient} from "@/lib/supabase/client";
-const items=[["Home","/",LayoutDashboard],["Register","/register",ClipboardList],["New RFI","/create",FilePlus2],["Inspections","/inspections",CalendarCheck],["Reports","/reports",ChartNoAxesCombined],["Admin","/access",ShieldCheck]] as const;
+
+const items=[["Home","/",Home],["Register","/register",ClipboardList],["Checklist","/checklists",ListChecks]] as const;
+
 export default function MobileNav(){
- const path=usePathname();const router=useRouter();const [isAdmin,setIsAdmin]=useState(false);const [isSiteEngineer,setIsSiteEngineer]=useState(false);
- useEffect(()=>{let active=true;async function loadRole(){const sb=createClient();const {data:{user}}=await sb.auth.getUser();if(!user)return;const {data}=await sb.from("rfi_user_profiles").select("role,is_active").eq("user_id",user.id).maybeSingle();if(active){setIsAdmin(data?.is_active===true&&data?.role==="admin");setIsSiteEngineer(data?.is_active===true&&data?.role==="site_engineer") }}loadRole();return()=>{active=false}},[]);
- async function logout(){const {error}=await createClient().auth.signOut();if(error){window.alert("Unable to log out. Please try again.");return}router.replace("/login");router.refresh()}
- const visibleItems=items.filter(([name])=>(name!=="Admin"||isAdmin)&&(name!=="New RFI"||isSiteEngineer));
- return <nav className="mobile-nav" data-item-count={visibleItems.length+1}>{visibleItems.map(([name,url,Icon])=><button key={url} className={path===url||(url==="/register"&&path.startsWith("/rfis/"))?"selected":""} onClick={()=>router.push(url)}><Icon size={19}/><span>{name}</span></button>)}<button onClick={logout}><LogOut size={19}/><span>Logout</span></button></nav>
+ const path=usePathname();
+ const router=useRouter();
+ const [loggingOut,setLoggingOut]=useState(false);
+ async function logout(){
+  if(loggingOut)return;
+  setLoggingOut(true);
+  const {error}=await createClient().auth.signOut();
+  if(error){window.alert("Unable to log out. Please try again.");setLoggingOut(false);return}
+  router.replace("/login");router.refresh();
+ }
+ return <nav className="mobile-nav" aria-label="Main navigation">
+  {items.map(([name,url,Icon])=><button type="button" key={url} aria-current={path===url?"page":undefined} className={path===url||(url==="/register"&&path.startsWith("/rfis/"))?"selected":""} onClick={()=>router.push(url)}>
+   <Icon size={25} strokeWidth={2.1}/><span>{name}</span>
+  </button>)}
+  <button type="button" onClick={logout} disabled={loggingOut}><LogOut size={25} strokeWidth={2.1}/><span>{loggingOut?"Logging out":"Logout"}</span></button>
+ </nav>
 }
