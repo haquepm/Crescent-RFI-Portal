@@ -12,7 +12,7 @@ export default function manifest(): MetadataRoute.Manifest {
     display_override: ["standalone", "minimal-ui"],
     orientation: "any",
     background_color: "#091426",
-    theme_color: "#101d35",
+    theme_color: "#091426",
     categories: ["business", "productivity"],
     icons: [
       { src: "/crescent-rfi-192.png", sizes: "192x192", type: "image/png", purpose: "any" },
