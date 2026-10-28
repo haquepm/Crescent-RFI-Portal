@@ -151,3 +151,13 @@ form section>div>label,[class*="checklist"] label{background:rgba(13,57,46,.55)!
  .mobile-nav button svg{width:19px;height:19px;flex:0 0 auto}
  .mobile-nav button span{font-size:clamp(7px,2.2vw,9px)!important;line-height:1.1;letter-spacing:-.02em}
 }
+
+
+/* RFI register: full-width workspace and no horizontal table scrolling */
+.workspace-main{margin-left:0!important;width:100%!important;max-width:none!important;padding:28px 32px!important}
+.register-table-wrap{width:100%;overflow-x:hidden!important}
+.rfi-register-table{width:100%!important;min-width:0!important;table-layout:fixed!important;border-collapse:collapse}
+.rfi-register-table th,.rfi-register-table td{padding:14px 10px!important;white-space:normal!important;overflow-wrap:anywhere;word-break:break-word;vertical-align:middle}
+.rfi-register-table th:nth-child(1){width:19%}.rfi-register-table th:nth-child(2){width:22%}.rfi-register-table th:nth-child(3){width:22%}.rfi-register-table th:nth-child(4){width:11%}.rfi-register-table th:nth-child(5){width:13%}.rfi-register-table th:nth-child(6){width:13%}
+.rfi-register-table td b{overflow-wrap:anywhere}
+@media(max-width:900px){.workspace-main{padding:18px 14px 30px!important}.register-table-wrap{overflow-x:hidden!important}.rfi-register-table th,.rfi-register-table td{padding:10px 6px!important;font-size:11px!important}.rfi-register-table th{font-size:9px!important;letter-spacing:.025em}.rfi-register-table th:nth-child(1){width:20%}.rfi-register-table th:nth-child(2){width:22%}.rfi-register-table th:nth-child(3){width:21%}.rfi-register-table th:nth-child(4){width:12%}.rfi-register-table th:nth-child(5){width:13%}.rfi-register-table th:nth-child(6){width:12%}}
