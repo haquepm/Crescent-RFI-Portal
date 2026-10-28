@@ -5,7 +5,7 @@ import {useRouter} from "next/navigation";
 import {createClient} from "@/lib/supabase/client";
 
 type Notice={id:string;title:string;body:string;target_url:string;created_at:string;read_at:string|null};
-const VAPID_PUBLIC_KEY="BK0yrlS324Kk_Rh6UzcIYWHpZ8PG0yUYOViH8wEgcrLEi8rzsgzJM1f89mDGHSMR7LnNQtBtAIB2_WNR2gHCzow";
+const VAPID_PUBLIC_KEY="BH9UAX2kMhOVvUwq3nHq2ui7uiOgcBVirqrSGoPzfp8QL_2dkrakJ2mbPBGj3QS0tgf8U_K6lmZIsURt7E1iWLE";
 function decodeKey(value:string){const pad="=".repeat((4-value.length%4)%4);const raw=atob((value+pad).replace(/-/g,"+").replace(/_/g,"/"));return Uint8Array.from(raw,c=>c.charCodeAt(0))}
 export default function NotificationCenter(){
  const [open,setOpen]=useState(false);const [items,setItems]=useState<Notice[]>([]);const [busy,setBusy]=useState(false);const [status,setStatus]=useState("");const [supported,setSupported]=useState(false);const router=useRouter();
