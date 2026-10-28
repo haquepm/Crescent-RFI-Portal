@@ -3,19 +3,19 @@ import PwaRegister from "./pwa-register";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Crescent Quality Systems",
+  title: "Crescent RFI",
   description: "Crescent Contractors RFI and quality inspection portal.",
-  applicationName: "Crescent Quality Systems",
+  applicationName: "Crescent RFI",
   manifest: "/manifest.webmanifest",
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",
-    title: "Crescent Quality"
+    title: "Crescent RFI"
   },
   icons: {
-    icon: "/icon.svg",
-    shortcut: "/icon.svg",
-    apple: "/icon.svg"
+    icon: "/512x512%20new.png",
+    shortcut: "/192x192%20new.png",
+    apple: "/512x512%20new.png"
   }
 };
 
