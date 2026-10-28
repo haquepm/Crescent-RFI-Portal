@@ -116,5 +116,11 @@ export const STRUCTURE_CHECKLISTS: Record<string, string[]> = {
     "CONCRETE POUR CARD",
     "CONCRETE POST POUR INSPECTION CHECKLIST"
   ]
+  "LOAD TEST": [
+    "RFI",
+    "LOAD TEST CHECKLIST",
+    "TEST REPORT",
+    "Drawing"
+  ]
 };
 export const STRUCTURE_OPTIONS = Object.keys(STRUCTURE_CHECKLISTS);
