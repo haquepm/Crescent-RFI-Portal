@@ -1,4 +1,4 @@
-const CACHE_NAME = "crescent-rfi-shell-v7";
+const CACHE_NAME = "crescent-rfi-shell-v8";
 const APP_SHELL = ["/", "/manifest.webmanifest", "/crescent-rfi-192.png", "/crescent-rfi-512.png"];
 
 self.addEventListener("install", (event) => {
@@ -15,6 +15,35 @@ self.addEventListener("activate", (event) => {
     await Promise.all(keys.filter((key) => key.startsWith("crescent-rfi-") && key !== CACHE_NAME).map((key) => caches.delete(key)));
     await self.clients.claim();
   })());
+});
+
+self.addEventListener("push", (event) => {
+  let data = {};
+  try { data = event.data ? event.data.json() : {}; } catch { data = { body: event.data?.text() || "A new RFI update is available." }; }
+  const title = data.title || "Crescent RFI";
+  const options = {
+    body: data.body || "You have a new RFI notification.",
+    icon: "/crescent-rfi-192.png",
+    badge: "/crescent-rfi-192.png",
+    data: { url: data.url || data.target_url || "/" },
+    tag: data.tag || "crescent-rfi-update",
+    renotify: false
+  };
+  event.waitUntil(self.registration.showNotification(title, options));
+});
+
+self.addEventListener("notificationclick", (event) => {
+  event.notification.close();
+  const target = new URL(event.notification.data?.url || "/", self.location.origin).href;
+  event.waitUntil(self.clients.matchAll({ type: "window", includeUncontrolled: true }).then((clients) => {
+    for (const client of clients) {
+      if (client.url.startsWith(self.location.origin) && "focus" in client) {
+        client.navigate(target);
+        return client.focus();
+      }
+    }
+    return self.clients.openWindow(target);
+  }));
 });
 
 self.addEventListener("fetch", (event) => {
