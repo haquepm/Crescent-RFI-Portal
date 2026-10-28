@@ -179,3 +179,42 @@ form section>div>label,[class*="checklist"] label{background:rgba(13,57,46,.55)!
 .login-error{margin-top:16px;padding:12px 14px;border:1px solid #ff7e7e3d;border-radius:10px;background:#70232333;color:#ffb6b6;font-size:12px;line-height:1.5}.login-security{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:25px;color:#83a998;font-size:10px}.login-security span{font-size:8px;color:#5bdbab}.login-admin-note{margin-top:27px;padding-top:20px;border-top:1px solid #84c2a521;text-align:center;color:#6f9382;font-size:10px}.login-copyright{margin-top:26px;text-align:center;color:#668879;font-size:10px}
 @media(max-width:800px){.login-screen{padding:18px 14px;min-height:100svh}.login-layout{grid-template-columns:1fr;min-height:0;max-width:480px;border-radius:22px}.login-brand-panel{display:none}.login-form-side{padding:34px 25px 24px}.login-mobile-brand{display:flex;align-items:center;gap:10px;margin-bottom:32px;color:#eafff5;font-size:12px;font-weight:800;letter-spacing:.12em}.login-mobile-brand img{width:38px;height:38px;border-radius:11px}.login-card h2{font-size:30px}.login-card-subtitle{margin-bottom:28px}.login-copyright{margin-top:20px}}
 @media(max-width:360px){.login-form-side{padding:28px 18px 20px}.login-card h2{font-size:27px}}
+
+/* Crescent RFI brand palette: navy, orange and sky blue */
+:root{color-scheme:dark;--brand-navy:#101d35;--brand-deep:#091426;--brand-orange:#f28a32;--brand-orange-light:#ffad5c;--brand-sky:#62b8ed;--brand-sky-light:#a2d9ff;--brand-text:#f2f7ff;--brand-muted:#9eacc1;--brand-line:rgba(151,184,220,.19)}
+html,body{background:#091426!important;color:#f2f7ff!important}
+body{background:radial-gradient(ellipse at 12% 0%,rgba(98,184,237,.13),transparent 36%),radial-gradient(ellipse at 90% 20%,rgba(242,138,50,.09),transparent 30%),linear-gradient(145deg,#091426,#101d35 58%,#0b172a)!important;color:#f2f7ff!important}
+.sidebar{background:linear-gradient(180deg,#101d35,#0a1528)!important;border-color:var(--brand-line)!important}
+.brandmark{background:#f28a32!important;color:#101d35!important;box-shadow:0 5px 18px #f28a3238!important}
+.navitem{color:#aabbd1!important}.navitem.active,.navitem:hover{background:#62b8ed20!important;color:#fff!important;border-color:#62b8ed33!important}
+.eyebrow{color:#62b8ed!important}.muted{color:#9eacc1!important}
+.card,.stat{background:linear-gradient(145deg,#192b47,#12213a)!important;border:1px solid var(--brand-line)!important;color:#f2f7ff!important;box-shadow:0 14px 36px #0003!important}
+.statnum{color:#fff!important}
+.primary{background:#f28a32!important;color:#172238!important;border:1px solid #ffad5c!important;border-radius:9px!important;box-shadow:0 7px 18px #f28a3229!important}.primary:hover{background:#ffad5c!important}
+.secondary{background:#1b2d49!important;color:#dcecff!important;border:1px solid #62b8ed47!important}
+.field,input,select,textarea{background:#0d1a2e!important;color:#f2f7ff!important;border:1px solid #97b8dc47!important}
+.field:focus,input:focus,select:focus,textarea:focus{outline:2px solid #62b8ed8c!important;outline-offset:1px}
+input::placeholder,textarea::placeholder{color:#8498b2!important}
+.pill-blue{background:#62b8ed26!important;color:#9bd6ff!important}.pill-amber{background:#f28a3229!important;color:#ffc184!important}.pill-green{background:#57c39026!important;color:#8ee1b4!important}.pill-red{background:#f56a6a26!important;color:#ffaaaa!important}
+th{background:#1c304d!important;color:#a9c1da!important}td{color:#e9f2ff!important;border-color:var(--brand-line)!important}tr:hover td{background:#62b8ed0e!important}
+.mobile-nav{background:#091426f7!important;border-color:var(--brand-line)!important}.mobile-nav button{color:#8ea2bd!important}.mobile-nav button.selected{color:#fff!important}.mobile-nav button.selected svg{color:#f28a32!important}
+a{color:#62b8ed!important}hr,footer{border-color:var(--brand-line)!important}
+form,.form-panel,.form-card,.mobile-form{background:linear-gradient(145deg,#192b47,#12213a)!important;color:#f2f7ff!important;border-color:var(--brand-line)!important}
+label,legend{color:#c8d9ee!important}input[type=checkbox],input[type=radio]{accent-color:#f28a32!important}select option{background:#12213a;color:#f2f7ff}
+.site-table th{background:#1c304d!important}.site-table td:first-child{color:#a2d9ff!important}
+.login-screen{background:radial-gradient(ellipse at 15% 15%,#62b8ed2e,transparent 36%),radial-gradient(ellipse at 90% 82%,#f28a321f,transparent 32%),linear-gradient(135deg,#091426,#101d35 55%,#0b172a)!important;color:#f2f7ff!important}
+.login-layout{background:#14243def!important;border-color:#97b8dc33!important;box-shadow:0 32px 90px #0006!important}
+.login-brand-panel{background:linear-gradient(155deg,#1b3151,#101d35)!important;border-color:var(--brand-line)!important}
+.login-brand-copy h1 em{color:#f28a32!important}.login-eyebrow{color:#62b8ed!important}.login-eyebrow span{background:#f28a32!important;box-shadow:0 0 12px #f28a3299!important}
+.login-feature-icon{background:#62b8ed1a!important;border-color:#62b8ed3d!important;color:#a2d9ff!important}.login-feature-list b{color:#f2f7ff!important}.login-feature-list small,.login-brand-copy p{color:#a9bad0!important}.login-brand-footer{color:#8fa5c1!important}.login-brand-footer span{color:#f28a32!important}
+.login-form-side{background:linear-gradient(145deg,#101d35,#0d192d)!important}.login-card{background:transparent!important;border:0!important;box-shadow:none!important;color:#f2f7ff!important}
+.login-card-kicker{color:#f28a32!important}.login-card h2{color:#f5f8ff!important}.login-card-subtitle{color:#a7b7cc!important}.login-label{color:#c8d9ee!important;font-size:12px!important;font-weight:600!important;margin-bottom:8px!important}
+.login-input-wrap{height:46px!important;gap:0!important;padding:0 2px!important;border:0!important;border-bottom:1px solid #97b8dc70!important;border-radius:0!important;background:transparent!important;box-shadow:none!important}
+.login-input-wrap:focus-within{border-bottom:2px solid #62b8ed!important;box-shadow:none!important}.login-input-wrap svg{display:none!important}
+.login-input-wrap input{background:transparent!important;border:0!important;border-radius:0!important;color:#f4f8ff!important;padding:0 2px!important;font-size:14px!important;box-shadow:none!important}.login-input-wrap input::placeholder{color:#7186a2!important}
+.login-password-heading{margin-top:25px!important}.login-show-password{color:#62b8ed!important;font-size:11px!important}
+.login-submit{height:49px!important;margin-top:30px!important;background:#f28a32!important;border:1px solid #ffad5c!important;color:#172238!important;border-radius:9px!important;box-shadow:0 8px 22px #f28a322b!important}.login-submit:hover{background:#ffad5c!important}
+.login-security{color:#9aacc3!important}.login-security span{color:#62b8ed!important}.login-admin-note{border-color:var(--brand-line)!important;color:#8298b4!important}.login-copyright{color:#8195af!important}
+.login-glow-one,.login-glow-two{border-color:#62b8ed29!important;box-shadow:0 0 0 55px #62b8ed08,0 0 0 110px #f28a3205!important}
+@media(max-width:900px){body{background:linear-gradient(180deg,#091426,#101d35 60%,#0b172a)!important}.mobile-nav{box-shadow:0 -10px 30px #0005!important}}
+@media(max-width:800px){.login-form-side{background:linear-gradient(145deg,#14243d,#101d35)!important}.login-mobile-brand{color:#f2f7ff!important}}
