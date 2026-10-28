@@ -12,8 +12,8 @@ type Baseline = {location:string;rfi_raised:number;rfi_closed:number;pending:num
 type PendingDetail={id:string;rfi_number:string|null;location?:string|null;structure?:string|null;activity_name?:string|null;status:string;created_at:string};
 type PendingChecklist={rfi_id:string;item_text:string;is_completed:boolean;is_required:boolean};
 type PendingDoc={rfi_id:string;document_type:string;is_applicable:boolean;submission_status:string;systra_signed:boolean};
-const statusStyle:Record<string,string>={work_ready:"pill-amber",draft:"pill-blue",checklist_in_progress:"pill-blue",submitted:"pill-blue",scheduled:"pill-blue",approved:"pill-green",rejected:"pill-red",rectification_required:"pill-amber",closed:"pill-green"};
-const statusLabel:Record<string,string>={work_ready:"Work ready",draft:"Draft",checklist_in_progress:"Checklist in progress",submitted:"Submitted to KMRL",scheduled:"Scheduled",approved:"Legacy approved",rejected:"Legacy rejected",rectification_required:"Legacy rectification",closed:"Closed"};
+const statusStyle:Record<string,string>={work_ready:"pill-amber",draft:"pill-blue",checklist_in_progress:"pill-blue",submitted:"pill-blue",submission_pending:"pill-amber",scheduled:"pill-blue",approved:"pill-green",rejected:"pill-red",rectification_required:"pill-amber",closed:"pill-green"};
+const statusLabel:Record<string,string>={work_ready:"Work ready",draft:"Draft",checklist_in_progress:"Checklist in progress",submitted:"Submitted to KMRL",submission_pending:"Submission Pending",scheduled:"Scheduled",approved:"Legacy approved",rejected:"Legacy rejected",rectification_required:"Legacy rectification",closed:"Closed"};
 const nav=[{label:"Overview",icon:LayoutDashboard},{label:"RFI Register",icon:ClipboardList},{label:"Create RFI",icon:FilePlus2},{label:"Checklists",icon:ListChecks},{label:"Inspections",icon:ClipboardCheck},{label:"Reports",icon:Activity}];
 const norm=(s?:string|null)=>(s||"").toLowerCase();
 // Dashboard now reflects only the pending RFI register imported from the approved pending list.
