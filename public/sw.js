@@ -1,5 +1,5 @@
-const CACHE_NAME = "crescent-rfi-shell-v2";
-const APP_SHELL = ["/", "/manifest.webmanifest", "/192x192%20new.png", "/512x512%20new.png"];
+const CACHE_NAME = "crescent-rfi-shell-v3";
+const APP_SHELL = ["/", "/manifest.webmanifest", "/crescent-rfi-192.png", "/crescent-rfi-512.png"];
 
 self.addEventListener("install", (event) => {
   event.waitUntil((async () => {
