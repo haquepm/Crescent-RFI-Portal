@@ -13,14 +13,14 @@ export const metadata: Metadata = {
     title: "Crescent RFI"
   },
   icons: {
-    icon: "/512x512%20new.png",
-    shortcut: "/192x192%20new.png",
-    apple: "/512x512%20new.png"
+    icon: "/crescent-rfi-512.png",
+    shortcut: "/crescent-rfi-192.png",
+    apple: "/crescent-rfi-512.png"
   }
 };
 
 export const viewport: Viewport = {
-  themeColor: "#06352b",
+  themeColor: "#101d35",
   width: "device-width",
   initialScale: 1
 };
