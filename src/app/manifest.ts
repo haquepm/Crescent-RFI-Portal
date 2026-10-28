@@ -3,9 +3,9 @@ import type { MetadataRoute } from "next";
 export default function manifest(): MetadataRoute.Manifest {
   return {
     id: "/",
-    name: "Crescent Quality Systems",
-    short_name: "Crescent Quality",
-    description: "Crescent Contractors RFI and quality inspection portal",
+    name: "Crescent RFI",
+    short_name: "Crescent RFI",
+    description: "Crescent RFI and quality inspection portal",
     start_url: "/",
     scope: "/",
     display: "standalone",
@@ -15,8 +15,8 @@ export default function manifest(): MetadataRoute.Manifest {
     theme_color: "#06352b",
     categories: ["business", "productivity"],
     icons: [
-      { src: "/icon.svg", sizes: "any", type: "image/svg+xml", purpose: "any" },
-      { src: "/icon.svg", sizes: "any", type: "image/svg+xml", purpose: "maskable" }
+      { src: "/192x192%20new.png", sizes: "192x192", type: "image/png", purpose: "any" },
+      { src: "/512x512%20new.png", sizes: "512x512", type: "image/png", purpose: "any maskable" }
     ]
   };
 }
