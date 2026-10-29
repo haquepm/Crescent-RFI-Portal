@@ -1,1 +1,9 @@
-<resources><style name="TwaSplashTheme" parent="Theme.AppCompat.DayNight.NoActionBar"><item name="android:windowActionModeOverlay">true</item><item name="android:windowBackground">@color/navy_dark</item><item name="android:statusBarColor">@color/navy</item><item name="android:navigationBarColor">@color/navy_dark</item></style></resources>
+<resources>
+    <style name="TwaSplashTheme" parent="@android:style/Theme.Material.Light.NoActionBar">
+        <item name="android:windowActionModeOverlay">true</item>
+        <item name="android:windowBackground">@color/navy_dark</item>
+        <item name="android:statusBarColor">@color/navy</item>
+        <item name="android:navigationBarColor">@color/navy_dark</item>
+        <item name="android:colorAccent">@color/orange</item>
+    </style>
+</resources>
