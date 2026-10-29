@@ -4,13 +4,14 @@ import { NextResponse, type NextRequest } from "next/server";
 export async function middleware(request: NextRequest) {
   let response = NextResponse.next({ request });
   const isLogin = request.nextUrl.pathname === "/login";
+
+  // Never redirect /login away. Users must be able to switch accounts even
+  // when an old or valid Supabase session cookie is present.
+  if (isLogin) return response;
+
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-
-  if (!url || !key) {
-    if (isLogin) return response;
-    return NextResponse.redirect(new URL("/login", request.url));
-  }
+  if (!url || !key) return NextResponse.redirect(new URL("/login", request.url));
 
   try {
     const supabase = createServerClient(url, key, {
@@ -23,18 +24,30 @@ export async function middleware(request: NextRequest) {
         },
       },
     });
+
     const { data: { user }, error } = await supabase.auth.getUser();
     if (error || !user) {
-      if (isLogin) return response;
       const destination = new URL("/login", request.url);
       destination.searchParams.set("next", request.nextUrl.pathname);
       return NextResponse.redirect(destination);
     }
-    if (isLogin) return NextResponse.redirect(new URL("/", request.url));
+
+    const { data: profile, error: profileError } = await supabase
+      .from("rfi_user_profiles")
+      .select("is_active")
+      .eq("user_id", user.id)
+      .maybeSingle();
+
+    if (profileError || !profile?.is_active) {
+      const destination = new URL("/login", request.url);
+      destination.searchParams.set("access", "inactive");
+      return NextResponse.redirect(destination);
+    }
   } catch (error) {
-    console.error("RFI authentication middleware failed:", error);
-    if (!isLogin) return NextResponse.redirect(new URL("/login", request.url));
+    console.error("Crescent RFI authentication middleware failed:", error);
+    return NextResponse.redirect(new URL("/login", request.url));
   }
+
   return response;
 }
 
