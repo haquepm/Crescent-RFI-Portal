@@ -381,3 +381,61 @@ html,body{background-color:#091426!important}
   .login-input-wrap{min-height:56px!important;padding:0 13px!important;border-radius:11px!important}
   .login-input-wrap:focus-within{border-radius:11px!important}
 }
+
+
+/* FINAL login input correction: one compact rounded field, no nested input box */
+.login-input-wrap{
+  box-sizing:border-box!important;
+  display:flex!important;
+  align-items:center!important;
+  height:48px!important;
+  min-height:48px!important;
+  padding:0 13px!important;
+  gap:10px!important;
+  overflow:hidden!important;
+  background:#243752!important;
+  border:1px solid rgba(151,184,220,.42)!important;
+  border-radius:11px!important;
+  box-shadow:none!important;
+}
+.login-input-wrap:focus-within{
+  background:#243752!important;
+  border:1px solid #62b8ed!important;
+  border-radius:11px!important;
+  box-shadow:0 0 0 2px rgba(98,184,237,.13)!important;
+}
+.login-input-wrap input,
+.login-input-wrap input:focus,
+.login-input-wrap input:-webkit-autofill,
+.login-input-wrap input:-webkit-autofill:hover,
+.login-input-wrap input:-webkit-autofill:focus{
+  box-sizing:border-box!important;
+  display:block!important;
+  flex:1 1 0!important;
+  width:0!important;
+  min-width:0!important;
+  height:46px!important;
+  min-height:46px!important;
+  margin:0!important;
+  padding:0!important;
+  background:transparent!important;
+  background-color:transparent!important;
+  border:0!important;
+  border-radius:0!important;
+  outline:0!important;
+  box-shadow:none!important;
+  -webkit-box-shadow:0 0 0 1000px #243752 inset!important;
+  -webkit-text-fill-color:#f4f8ff!important;
+  color:#f4f8ff!important;
+  font:inherit!important;
+}
+.login-input-wrap input::placeholder{color:#9aabc1!important}
+.login-input-wrap>svg{display:none!important}
+.login-show-password{
+  height:100%!important;
+  padding:0 2px 0 10px!important;
+  border:0!important;
+  background:transparent!important;
+}
+.login-label{margin-bottom:7px!important}
+.login-password-heading{margin-top:18px!important}
