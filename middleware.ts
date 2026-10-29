@@ -4,13 +4,13 @@ import { NextResponse, type NextRequest } from "next/server";
 export async function middleware(request: NextRequest) {
   let response = NextResponse.next({ request });
   const isLogin = request.nextUrl.pathname === "/login";
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
-  // Always allow the login page to render, even with an existing session,
-  // so users can deliberately switch accounts.
+  // Never redirect /login away. Users must be able to switch accounts even
+  // when an old or valid Supabase session cookie is present.
   if (isLogin) return response;
 
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
   if (!url || !key) return NextResponse.redirect(new URL("/login", request.url));
 
   try {
@@ -44,7 +44,7 @@ export async function middleware(request: NextRequest) {
       return NextResponse.redirect(destination);
     }
   } catch (error) {
-    console.error("Crescent RFI auth middleware failed:", error);
+    console.error("Crescent RFI authentication middleware failed:", error);
     return NextResponse.redirect(new URL("/login", request.url));
   }
 
