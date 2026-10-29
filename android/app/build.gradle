@@ -9,6 +9,11 @@ android {
  } }
  buildTypes { release { minifyEnabled false; signingConfig signingConfigs.release } }
 }
+configurations.configureEach {
+    exclude group: 'org.jetbrains.kotlin', module: 'kotlin-stdlib-jdk7'
+    exclude group: 'org.jetbrains.kotlin', module: 'kotlin-stdlib-jdk8'
+}
+
 dependencies {
     implementation 'com.google.androidbrowserhelper:androidbrowserhelper:2.5.0'
     implementation 'androidx.appcompat:appcompat:1.7.0'
