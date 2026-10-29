@@ -7,10 +7,11 @@ export async function middleware(request: NextRequest) {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
-  if (!url || !key) {
-    if (isLogin) return response;
-    return NextResponse.redirect(new URL("/login", request.url));
-  }
+  // Always allow the login page to render, even with an existing session,
+  // so users can deliberately switch accounts.
+  if (isLogin) return response;
+
+  if (!url || !key) return NextResponse.redirect(new URL("/login", request.url));
 
   try {
     const supabase = createServerClient(url, key, {
@@ -26,16 +27,27 @@ export async function middleware(request: NextRequest) {
 
     const { data: { user }, error } = await supabase.auth.getUser();
     if (error || !user) {
-      if (isLogin) return response;
       const destination = new URL("/login", request.url);
       destination.searchParams.set("next", request.nextUrl.pathname);
       return NextResponse.redirect(destination);
     }
-    if (isLogin) return NextResponse.redirect(new URL("/", request.url));
+
+    const { data: profile, error: profileError } = await supabase
+      .from("rfi_user_profiles")
+      .select("is_active")
+      .eq("user_id", user.id)
+      .maybeSingle();
+
+    if (profileError || !profile?.is_active) {
+      const destination = new URL("/login", request.url);
+      destination.searchParams.set("access", "inactive");
+      return NextResponse.redirect(destination);
+    }
   } catch (error) {
     console.error("Crescent RFI auth middleware failed:", error);
-    if (!isLogin) return NextResponse.redirect(new URL("/login", request.url));
+    return NextResponse.redirect(new URL("/login", request.url));
   }
+
   return response;
 }
 
