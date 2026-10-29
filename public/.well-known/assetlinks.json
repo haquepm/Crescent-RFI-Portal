@@ -1,0 +1,14 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.crescentcontractors.rfi",
+      "sha256_cert_fingerprints": [
+        "1E:06:DA:3F:BE:21:7D:39:67:55:BA:5F:E0:4C:F0:53:2C:C4:FD:8F:2F:DF:B5:A6:BA:C4:45:53:04:D7:ED:C8"
+      ]
+    }
+  }
+]
