@@ -1,0 +1,37 @@
+name: Build Crescent RFI Android APK
+on:
+  workflow_dispatch:
+  push:
+    paths: ['android/**', '.github/workflows/build-android-apk.yml', 'public/.well-known/assetlinks.json']
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with: { distribution: temurin, java-version: '17' }
+      - uses: android-actions/setup-android@v3
+      - uses: gradle/actions/setup-gradle@v4
+        with: { gradle-version: '8.7' }
+      - name: Prepare release signing key
+        env:
+          KEYSTORE_B64: ${{ secrets.CRESCENT_KEYSTORE_BASE64 }}
+          KEYSTORE_PASSWORD: ${{ secrets.CRESCENT_KEYSTORE_PASSWORD }}
+          KEY_ALIAS: ${{ secrets.CRESCENT_KEY_ALIAS }}
+          KEY_PASSWORD: ${{ secrets.CRESCENT_KEY_PASSWORD }}
+        run: |
+          if [ -z "$KEYSTORE_B64" ] || [ -z "$KEYSTORE_PASSWORD" ] || [ -z "$KEY_ALIAS" ] || [ -z "$KEY_PASSWORD" ]; then echo "Configure all four CRESCENT_* repository secrets first."; exit 1; fi
+          echo "$KEYSTORE_B64" | base64 --decode > "$RUNNER_TEMP/crescent-rfi-release.jks"
+          echo "CRESCENT_KEYSTORE_PATH=$RUNNER_TEMP/crescent-rfi-release.jks" >> "$GITHUB_ENV"
+          echo "CRESCENT_KEYSTORE_PASSWORD=$KEYSTORE_PASSWORD" >> "$GITHUB_ENV"
+          echo "CRESCENT_KEY_ALIAS=$KEY_ALIAS" >> "$GITHUB_ENV"
+          echo "CRESCENT_KEY_PASSWORD=$KEY_PASSWORD" >> "$GITHUB_ENV"
+      - name: Build signed APK
+        working-directory: android
+        run: gradle --no-daemon assembleRelease
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Crescent-RFI-Android-APK
+          path: android/app/build/outputs/apk/release/app-release.apk
+          if-no-files-found: error
+          retention-days: 30
