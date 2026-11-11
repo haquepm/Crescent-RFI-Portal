@@ -439,3 +439,21 @@ html,body{background-color:#091426!important}
 }
 .login-label{margin-bottom:7px!important}
 .login-password-heading{margin-top:18px!important}
+
+
+/* RFI register: keep all seven columns, including Open action, visible */
+.rfi-register-table{width:100%!important;min-width:0!important;table-layout:fixed!important}
+.rfi-register-table th:nth-child(1),.rfi-register-table td:nth-child(1){width:16%}
+.rfi-register-table th:nth-child(2),.rfi-register-table td:nth-child(2){width:17%}
+.rfi-register-table th:nth-child(3),.rfi-register-table td:nth-child(3){width:17%}
+.rfi-register-table th:nth-child(4),.rfi-register-table td:nth-child(4){width:11%}
+.rfi-register-table th:nth-child(5),.rfi-register-table td:nth-child(5){width:12%}
+.rfi-register-table th:nth-child(6),.rfi-register-table td:nth-child(6){width:13%}
+.rfi-register-table th:nth-child(7),.rfi-register-table td:nth-child(7){width:14%}
+.rfi-register-table td:nth-child(7) .secondary{white-space:nowrap!important;min-width:76px}
+@media(max-width:900px){
+ .workspace-main .rfi-register-table tbody td:nth-child(4)::before{content:"Structure ID"}
+ .workspace-main .rfi-register-table tbody td:nth-child(5)::before{content:"Raised"}
+ .workspace-main .rfi-register-table tbody td:nth-child(6)::before{content:"Status"}
+ .workspace-main .rfi-register-table tbody td:nth-child(7)::before{content:"Action"}
+}
